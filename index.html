@@ -3,47 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Happy Birthday ❤️</title>
 
     <link rel="stylesheet" href="style.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   </head>
+
   <body>
-    <div id="stars"></div>
+    <!-- Musik -->
+    <audio id="bgm" autoplay loop>
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
 
-    <div class="container">
-      <h1>🎂 Happy Birthday 🎂</h1>
+    <!-- Bubble Background -->
+    <div class="background">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-      <h2>My Love 💙</h2>
+    <!-- Kucing -->
+    <div id="cat">🐱💙</div>
 
-      <p class="typing"></p>
+    <!-- ================= HALAMAN 1 ================= -->
 
-      <button onclick="showWish()">Klik Aku 💙</button>
+    <section id="page1" class="page">
+      <div class="card">
+        <h1>Happy Birthday</h1>
 
-      <div id="wish" class="hidden">
+        <h2>Sayangku 🤍</h2>
+
+        <img src="foto.jpg" class="photo" alt="Foto" />
+
         <p>
-          Selamat ulang tahun, sayang. 🤍<br /><br />
+          Hari ini adalah hari spesialmu. Semoga semua doa terbaikmu menjadi
+          kenyataan.
+        </p>
 
-          Semoga semua doa terbaikmu satu per satu menjadi kenyataan. Terima
-          kasih sudah hadir dan membuat hidupku lebih indah. Aku akan selalu
-          mendukung setiap langkahmu. Semoga di usia yang baru ini kamu selalu
-          sehat, bahagia, dan semakin dekat dengan semua impianmu.
+        <button onclick="nextPage(2)">Buka Hadiah 🎁</button>
+      </div>
+    </section>
+
+    <!-- ================= HALAMAN 2 ================= -->
+
+    <section id="page2" class="page hidden">
+      <div class="card">
+        <h2>Untukmu 💙</h2>
+
+        <p id="typing"></p>
+
+        <button onclick="nextPage(3)">Lanjut →</button>
+      </div>
+    </section>
+
+    <!-- ================= HALAMAN 3 ================= -->
+
+    <section id="page3" class="page hidden">
+      <div class="card">
+        <div class="firework">✨</div>
+
+        <div class="cake">🎂</div>
+
+        <h2>Selamat Ulang Tahun</h2>
+
+        <p>
+          Semoga langkahmu selalu dimudahkan. Semoga senyummu tak pernah hilang.
+          Semoga aku selalu menjadi alasan kecil di balik bahagiamu. 🤍
+        </p>
+
+        <button onclick="nextPage(4)">Terakhir →</button>
+      </div>
+    </section>
+
+    <!-- ================= HALAMAN 4 ================= -->
+
+    <section id="page4" class="page hidden">
+      <div class="card">
+        <h2>I Love You ❤️</h2>
+
+        <p>
+          Terima kasih telah hadir di hidupku. Semoga tahun ini membawa lebih
+          banyak tawa, lebih banyak mimpi yang tercapai, dan lebih banyak
+          kebahagiaan.
 
           <br /><br />
 
-          I love you more than words can ever explain. 💙
+          Happy Birthday, My Love. 🤍
         </p>
+
+        <button onclick="location.reload()">Putar Lagi 💙</button>
       </div>
-
-      <div id="cake" class="hidden">🎂✨🎉</div>
-
-      <div class="qr-section">
-        <h3>Scan QR Ini Lagi Nanti 💙</h3>
-
-        <canvas id="qrcode"></canvas>
-      </div>
-    </div>
+    </section>
 
     <script src="script.js"></script>
   </body>

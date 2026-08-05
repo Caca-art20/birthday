@@ -2,118 +2,206 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Segoe UI;
 }
 
 body {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a, #3b82f6);
+  font-family: Segoe UI;
+
+  background: #f8fbff;
+
+  color: #163d6b;
+
   overflow: hidden;
+}
+
+.page {
+  width: 100%;
+
   height: 100vh;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
-  color: white;
-}
 
-.container {
-  text-align: center;
-  width: 90%;
-  max-width: 700px;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-  animation: fade 2s;
-}
-
-h1 {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  margin-bottom: 20px;
-  color: #cde8ff;
-}
-
-.typing {
-  font-size: 20px;
-  height: 40px;
-  margin-bottom: 20px;
-}
-
-button {
-  padding: 15px 40px;
-  border: none;
-  border-radius: 40px;
-  background: #60a5fa;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
-  background: #93c5fd;
+  animation: fade 0.8s;
 }
 
 .hidden {
   display: none;
 }
 
-#wish {
+.card {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  text-align: center;
+
+  max-width: 420px;
+}
+
+.photo {
+  width: 220px;
+
+  border-radius: 18px;
+
+  margin: 20px;
+
+  animation: float 3s infinite;
+}
+
+button {
   margin-top: 30px;
-  font-size: 18px;
-  line-height: 1.8;
-  animation: fade 2s;
+
+  padding: 14px 35px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #3b82f6;
+
+  color: white;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
-#cake {
-  font-size: 70px;
+button:hover {
+  background: #2563eb;
+
+  transform: scale(1.05);
+}
+
+.cat {
+  width: 70px;
+
   margin-top: 20px;
-  animation: bounce 1s infinite;
+
+  transition: 0.5s;
 }
 
-.qr-section {
-  margin-top: 35px;
+.jump {
+  transform: translateY(-30px);
 }
 
-canvas {
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
+.firework {
+  font-size: 55px;
+
+  animation: fire 1.2s infinite;
 }
 
-.star {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: white;
-  border-radius: 50%;
-  animation: twinkle 4s infinite;
-}
+.cake {
+  font-size: 75px;
 
-@keyframes bounce {
-  50% {
-    transform: translateY(-10px);
-  }
+  margin: 20px;
 }
 
 @keyframes fade {
   from {
     opacity: 0;
+
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform: none;
   }
 }
 
-@keyframes twinkle {
+@keyframes float {
   50% {
-    opacity: 0.2;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fire {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* =======================
+   WHITE CAT ANIMATION
+======================= */
+
+#cat {
+  position: fixed;
+
+  bottom: -120px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 60px;
+
+  opacity: 0;
+
+  z-index: 9999;
+
+  pointer-events: none;
+}
+
+.showCat {
+  animation: catAnimation 2s ease forwards;
+}
+
+@keyframes catAnimation {
+  0% {
+    bottom: -120px;
+
+    opacity: 0;
+
+    transform: translateX(-50%) scale(0.7);
+  }
+
+  20% {
+    bottom: 40px;
+
+    opacity: 1;
+
+    transform: translateX(-50%) scale(1);
+  }
+
+  35% {
+    bottom: 70px;
+
+    transform: translateX(-50%) rotate(-10deg);
+  }
+
+  50% {
+    bottom: 45px;
+
+    transform: translateX(-50%) rotate(10deg);
+  }
+
+  65% {
+    bottom: 60px;
+
+    transform: translateX(-50%) rotate(-5deg);
+  }
+
+  80% {
+    bottom: 40px;
+
+    opacity: 1;
+  }
+
+  100% {
+    bottom: -120px;
+
+    opacity: 0;
   }
 }

@@ -1,58 +1,46 @@
-const text = "Semoga hari ini seindah senyummu. 💙";
+function nextPage(n) {
+  document.querySelectorAll(".page").forEach((page) => {
+    page.classList.add("hidden");
+  });
+
+  document.getElementById("page" + n).classList.remove("hidden");
+
+  showCat();
+}
+
+const text =
+  "Aku bersyukur karena semesta mempertemukanku denganmu. Semoga setiap langkahmu selalu dipenuhi kebahagiaan. Terima kasih telah menjadi seseorang yang begitu berarti di hidupku. Aku mencintaimu. 🤍";
 
 let i = 0;
 
 function typing() {
   if (i < text.length) {
-    document.querySelector(".typing").innerHTML += text.charAt(i);
+    document.getElementById("typing").innerHTML += text.charAt(i);
 
     i++;
 
-    setTimeout(typing, 70);
+    setTimeout(typing, 40);
   }
 }
 
 typing();
 
-function showWish() {
-  document.getElementById("wish").classList.remove("hidden");
+function catJump() {
+  const cat = document.querySelector(".cat");
 
-  document.getElementById("cake").classList.remove("hidden");
+  cat.classList.add("jump");
 
-  confetti();
+  setTimeout(() => {
+    cat.classList.remove("jump");
+  }, 600);
 }
 
-function confetti() {
-  for (let i = 0; i < 100; i++) {
-    let star = document.createElement("div");
+function showCat() {
+  const cat = document.getElementById("cat");
 
-    star.className = "star";
+  cat.classList.remove("showCat");
 
-    star.style.left = Math.random() * 100 + "vw";
+  void cat.offsetWidth;
 
-    star.style.top = Math.random() * 100 + "vh";
-
-    star.style.animationDelay = Math.random() * 3 + "s";
-
-    document.body.appendChild(star);
-  }
+  cat.classList.add("showCat");
 }
-
-QRCode.toCanvas(
-  document.getElementById("qrcode"),
-  "https://caca-art20.github.io/birthday/",
-  {
-    width: 170,
-    color: {
-      dark: "#1E3A8A",
-      light: "#FFFFFF",
-    },
-  },
-  function (error) {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log("QR Code berhasil dibuat.");
-    }
-  },
-);
