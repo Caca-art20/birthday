@@ -40,16 +40,19 @@ function confetti() {
 
 QRCode.toCanvas(
   document.getElementById("qrcode"),
-
-  window.location.href,
-
+  "https://caca-art20.github.io/birthday/",
   {
     width: 170,
-
     color: {
       dark: "#1E3A8A",
-
       light: "#FFFFFF",
     },
+  },
+  function (error) {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log("QR Code berhasil dibuat.");
+    }
   },
 );
