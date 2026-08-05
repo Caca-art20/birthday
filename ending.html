@@ -1,20 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Happy Birthday Senaa 🤍</title>
+    <title>Happy Birthday 🤍</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <audio id="music" loop>
-      <source src="music.mp3" type="audio/mp3" />
-    </audio>
-
     <div class="background">
       <div class="bubble x1"></div>
       <div class="bubble x2"></div>
@@ -23,23 +19,22 @@
       <div class="bubble x5"></div>
     </div>
 
-    <section id="opening">
-      <div class="card">
-        <div class="heart">🤍</div>
+    <section class="ending">
+      <div class="ending-card">
+        <div class="cake">🎂</div>
 
         <h1>Happy Birthday</h1>
 
-        <h2>Senaa</h2>
+        <h2>Senaa 🤍</h2>
 
-        <img src="img/profile.jpg" class="profile" />
+        <p id="endingText"></p>
 
-        <p>Every moment with you is my favorite memory.</p>
+        <div id="fireworks"></div>
 
-        <span> Tap Anywhere </span>
+        <button onclick="location.href = 'index.html'">Start Again 💙</button>
       </div>
     </section>
 
     <script src="script.js"></script>
-    <div class="flash" id="flash"></div>
   </body>
 </html>

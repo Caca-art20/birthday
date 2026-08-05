@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Our Song</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="bubble x1"></div>
+      <div class="bubble x2"></div>
+      <div class="bubble x3"></div>
+      <div class="bubble x4"></div>
+      <div class="bubble x5"></div>
+    </div>
+
+    <div class="music-card">
+      <h2>🎵 Our Song</h2>
+
+      <div class="cover">
+        <img id="cover" src="img/cover.jpg" />
+      </div>
+
+      <h3>Shape Of My Heart</h3>
+
+      <p>Backstreet Boys</p>
+
+      <audio id="audio">
+        <source src="music.mp3" />
+      </audio>
+
+      <input type="range" id="progress" value="0" min="0" max="100" />
+
+      <div class="time">
+        <span id="current"> 0:00 </span>
+
+        <span id="duration"> 0:00 </span>
+      </div>
+
+      <div class="controls">
+        <button onclick="backSong()">
+          <i class="fa-solid fa-backward"></i>
+        </button>
+
+        <button class="play" onclick="playPause()">
+          <i id="playIcon" class="fa-solid fa-play"> </i>
+        </button>
+
+        <button onclick="nextSong()">
+          <i class="fa-solid fa-forward"></i>
+        </button>
+      </div>
+
+      <button class="continue" onclick="location.href = 'reason.html'">
+        Continue →
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
