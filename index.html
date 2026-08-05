@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  </head>
+  <body>
+    <div id="stars"></div>
+
+    <div class="container">
+      <h1>🎂 Happy Birthday 🎂</h1>
+
+      <h2>My Love 💙</h2>
+
+      <p class="typing"></p>
+
+      <button onclick="showWish()">Klik Aku 💙</button>
+
+      <div id="wish" class="hidden">
+        <p>
+          Selamat ulang tahun, sayang. 🤍<br /><br />
+
+          Semoga semua doa terbaikmu satu per satu menjadi kenyataan. Terima
+          kasih sudah hadir dan membuat hidupku lebih indah. Aku akan selalu
+          mendukung setiap langkahmu. Semoga di usia yang baru ini kamu selalu
+          sehat, bahagia, dan semakin dekat dengan semua impianmu.
+
+          <br /><br />
+
+          I love you more than words can ever explain. 💙
+        </p>
+      </div>
+
+      <div id="cake" class="hidden">🎂✨🎉</div>
+
+      <div class="qr-section">
+        <h3>Scan QR Ini Lagi Nanti 💙</h3>
+
+        <canvas id="qrcode"></canvas>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
